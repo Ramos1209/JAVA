@@ -5,6 +5,8 @@
  */
 package br.com.teste;
 
+import Acabamento.CorteVinco;
+import br.com.jpa.EntityManagerUtil;
 import br.com.modelo.Pais;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
@@ -20,18 +22,11 @@ public class TestePersistencia {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        EntityManagerFactory emf = Persistence.createEntityManagerFactory("JavaHibernatePU");
-        EntityManager em = emf.createEntityManager();
+      
+        CorteVinco cv = new CorteVinco();
         
-        Pais p = new Pais();
         
-        p.setNome("Brasil");
-        p.setIso("BRA");
-        em.getTransaction().begin();
-        em.persist(p);
-        em.getTransaction().commit();
-        em.close();
-        emf.close();
+        System.out.println(cv.Calcula(2500, 30));
         
     }
     
