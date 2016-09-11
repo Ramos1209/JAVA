@@ -5,12 +5,8 @@
  */
 package br.com.teste;
 
-import Acabamento.CorteVinco;
-import br.com.jpa.EntityManagerUtil;
-import br.com.modelo.Pais;
-import javax.persistence.EntityManager;
-import javax.persistence.EntityManagerFactory;
-import javax.persistence.Persistence;
+import Acabamento.Papel;
+import br.com.descritivo.NumeroFolhas;
 
 /**
  *
@@ -22,11 +18,12 @@ public class TestePersistencia {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-      
-        CorteVinco cv = new CorteVinco();
-        
-        
-        System.out.println(cv.Calcula(2500, 30));
+    
+       // CorteVinco cv = new CorteVinco();
+       //  Papel p = new Papel();
+       NumeroFolhas n = new NumeroFolhas();
+        System.out.println(n.calculaMedida(31, 42,1000));
+       // BigDecimal bd = new BigDecimal(d).setScale(3, RoundingMode.HALF_EVEN);
         
     }
     
