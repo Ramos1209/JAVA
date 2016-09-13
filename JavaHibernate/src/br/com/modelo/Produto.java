@@ -6,16 +6,22 @@
 package br.com.modelo;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
+import javax.persistence.UniqueConstraint;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
 import org.hibernate.annotations.ForeignKey;
@@ -58,6 +64,13 @@ public class Produto implements Serializable {
     @JoinColumn(name = "marca", referencedColumnName = "id", nullable = false)
     @ForeignKey(name = "fk_marca")
     private Marca marca;
+    
+    @ManyToMany(fetch = FetchType.LAZY)
+      @JoinTable(name = "desejos",joinColumns = @JoinColumn(name = "produto",referencedColumnName = "id",nullable = false),
+            inverseJoinColumns = @JoinColumn(name = "pessoa_fisica",referencedColumnName = "id",nullable = false),
+            uniqueConstraints = {@UniqueConstraint(columnNames = {"pessoa_fisica","produto"})})
+    
+    private List<PessoaFisica> desejam = new ArrayList<>();
 
     public Produto() {
     }
@@ -146,6 +159,14 @@ public class Produto implements Serializable {
     @Override
     public String toString() {
         return nome;
+    }
+
+    public List<PessoaFisica> getDesejam() {
+        return desejam;
+    }
+
+    public void setDesejam(List<PessoaFisica> desejam) {
+        this.desejam = desejam;
     }
 
 }
