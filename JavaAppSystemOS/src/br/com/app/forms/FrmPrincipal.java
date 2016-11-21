@@ -211,7 +211,7 @@ public class FrmPrincipal extends javax.swing.JFrame {
        int confirma = JOptionPane.showConfirmDialog(null,"confirma a impressao desde relatorio","Atenção",JOptionPane.YES_NO_OPTION);
        if(confirma == JOptionPane.YES_OPTION){
            try {
-               JasperPrint print = JasperFillManager.fillReport("/home/paulo/relatorioCliente.jasper",null,con);
+               JasperPrint print = JasperFillManager.fillReport("/Bibliotecas/Documentos/relatorioCliente.jasper",null,con);
                JasperViewer.viewReport(print,false);
            } catch (Exception e) {
                JOptionPane.showMessageDialog(null, e.getMessage());
@@ -223,7 +223,7 @@ public class FrmPrincipal extends javax.swing.JFrame {
         int confirma = JOptionPane.showConfirmDialog(null,"confirma a impressao desde relatorio","Atenção",JOptionPane.YES_NO_OPTION);
        if(confirma == JOptionPane.YES_OPTION){
            try {
-               JasperPrint print = JasperFillManager.fillReport("/home/paulo/Documentos/servic.jasper",null,con);
+               JasperPrint print = JasperFillManager.fillReport("/Bibliotecas/Documentos/servic.jasper",null,con);
                JasperViewer.viewReport(print,false);
            } catch (Exception e) {
                JOptionPane.showMessageDialog(null, e.getMessage());
