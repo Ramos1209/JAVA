@@ -44,7 +44,7 @@ public class UsuarioDao implements Serializable{
       
         try {
              em = EntityManagerUtil.getEntityManagerFactory();
-            user = (Usuario) em.createNamedQuery("Usuario.findByNome")
+             user = (Usuario) em.createNamedQuery("Usuario.findByNome")
                     .setParameter("nome", nome)
                     .getSingleResult();
 

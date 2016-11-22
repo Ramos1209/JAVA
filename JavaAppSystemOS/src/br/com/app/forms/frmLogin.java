@@ -107,7 +107,7 @@ public class frmLogin extends javax.swing.JFrame {
         if (user != null) {
             FrmPrincipal frm = new FrmPrincipal();
             frm.setVisible(true);
-             if(perfil.equals("admin")){
+             if(perfil.equals("Admin")){
             FrmPrincipal.munuRelatorios.setEnabled(true);
             FrmPrincipal.menUsuario.setEnabled(true);
             FrmPrincipal.lblUsuario.setText(user.getNomeUsuario());

@@ -31,7 +31,7 @@ public class FabricaConexao {
 
                 Class.forName("org.postgresql.Driver");
                 conexao = DriverManager.getConnection(URL_CONEXAO, USUARIO, SENHA);
-               // stmt = conexao.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE,ResultSet.CONCUR_READ_ONLY);
+               
             } catch (ClassNotFoundException ex) {
               System.out.println("Erro ao conectar" +ex.getMessage());
 

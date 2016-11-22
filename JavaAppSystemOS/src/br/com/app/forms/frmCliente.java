@@ -100,6 +100,7 @@ public class frmCliente extends javax.swing.JInternalFrame {
             cliente.setNome(txtNome.getText());
             cliente.setEndereco(txtEnd.getText());
             dao.atualizaCliente(cliente);
+       
             JOptionPane.showMessageDialog(rootPane, "Cliente atualizao com sucesso!!!");
             limpaCampos();
             btnsalvar.setEnabled(true);
